@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conteiner{
+            background-color: #00ffff;
+            /* la primera propriedad que veremos es la 
+                     display:flex;
+             lo que activa el flex box, haciendo que so hijos los item se alinhe, por defecto en fila (row), este propiedad hace asi como el block ocupa todo el viewport
+                    display: inline-flex;
+            actual con inline-block solo va a ocupar el espacio que su contenido tiene el la viewport*/
+            display: flex; 
+        }
+        .item{
+            background-color:#666;
+        }
+    </style>
+</head>
+<body>
+    <section class="conteiner">
+        <article class="item">flex 1</article>
+        <article class="item">flex 2</article>
+        <article class="item">flex 3</article>
+    </section>
+</body>
+</html>
