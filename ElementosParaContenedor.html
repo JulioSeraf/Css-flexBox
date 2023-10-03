@@ -26,11 +26,21 @@
             /* la Propriedada flex-wrap, hace que plos elemento se alinhe en una sola linea o cambie el pra otra linea depoendendo del ttamnaho de la relsolucion de la viewporto en relacion a la box se contener o item , por defecto viene como nowrap*/
             /* se el valor es nowrap, independente de la largura-width del item, la caja conrtenedora seguira aliñando lo item en una sola linea iguinorando la largura */
             flex-wrap: wrap;
+            /* Flex-flow es un shorthand que une flex-direction y flex-wrap */
+            /* flex-flow: column nowrap;  */
+
+            /*Las seguintes propriedades nos sirve para linear y destribuir los elementos dentro de la box conteiner*/
+
+            /* justify-content alinea los elementos de la box en relacion al eje pricipal(lo cual puede cambiar dependedo del valor de flex-direction) */
+            /* esta proprieda va a aplicar el alineamiento si hay espacio sobrente en la box conteiner  */
+            justify-content: flex-start; /*flex-start|center|flex-end|space-between|space-around|space-evenly*/
+
         }
         .item{
             background-color:#666;
             border:  medium solid white;
             width: 20%;
+            height: 20%;
         }
     </style>
 </head>
