@@ -60,7 +60,11 @@
             flex-grow: 0;
             /* flex-shrink es lo contrario de grow, o sea proporciona el fator de disminur al elemento hijo en relacion se no hay espacio sobrante en el elemento padre, su valor de defecto es 1, no acepa valores negativos, se le asignamos 0 desativa el encojimento de las cajas*/
             flex-shrink: 1;
-            flex-basis: auto;
+            /* Flex-basic es el tamaño del elemento hijo dentro del eje princial del box conteiner, si el flex-derection es row funciona como un width, si es column funciona como un height, su valor por defecto es auto*/
+            /* Es importante lembrar que flex-basis en un caja flex tiene maior preferencia que width */
+            flex-basis:auto;
+            /* tbm tenemos un shorthand de las propiedad de los elementos hijos de una box conteiner, su nombres es FLEX: y agrupa el flex-grow, flex-shrink y flex-basic nesma misma orden */
+            flex: 0 1 auto;
         }
     </style>
 </head>
