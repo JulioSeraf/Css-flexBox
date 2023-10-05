@@ -44,14 +44,14 @@
 
             /* aling-item */
             /* esta propiedad trabaja de manera independente por cada linea o culumnas que tengamos */
-        align-items: stretch;/*el valor por defector es strect que hace q los hijos del box conteiner se estire a al tamaño del padre*/ 
+        align-items: center;/*el valor por defector es strect que hace q los hijos del box conteiner se estire a al tamaño del padre*/ 
              
             /* aling-column */
         /*se queremos alinear los elementos hijos como un elemento com un todo usamos esta propriedad, basicamente hace los mismo que justify-content pero en el eje tranversar */
         /* IMPORTANTE : esta propiedad no funciona con nowrap = elementos activos para una sola linea */
         align-content:flex-start;
-        }
-        .item{
+    }
+    .item{
             background-color:#666;
             border:  medium solid white;
             width: 20%;
@@ -65,14 +65,30 @@
             flex-basis:auto;
             /* tbm tenemos un shorthand de las propiedad de los elementos hijos de una box conteiner, su nombres es FLEX: y agrupa el flex-grow, flex-shrink y flex-basic nesma misma orden */
             flex: 0 1 auto;
+            /* Representa el order que tendera los elementos hijos dentro de la caja conteiner,
+            su valor por defecto es 0, acepta valores negativos y postivos, un valor menor sempre ira antes que un valor mayor */
+            order: 0;
+            /* EL aling-self alinea un elemento en el eje transversal, sirve para aliner un elemento en especifico, su valor por defecto es stretch, sobre escrive el valor de align-items*/
+            /* align-self:stretch; */
         }
-    </style>
+        .item:nth-child(3):hover{
+            background-color:black;
+            color: white;
+            order: 0;
+            align-self: stretch;
+        }
+        .item:nth-child(5){
+            background-color:lightgray;
+        }
+        </style>
 </head>
 <body>
     <section class="conteiner">
         <article class="item">flex 1</article>
         <article class="item">flex 2</article>
         <article class="item">flex 3</article>
+        <article class="item">flex 4</article>
+        <article class="item">flex 5</article>
     </section>
     <br>
     <br>
