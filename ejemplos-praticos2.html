@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Practicos Flexbox</title>
+    <style>
+        *,
+        *::before,
+        *::after{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main{
+
+            flex-grow: 1;
+        }
+        .titulares{
+            padding: 1rem;
+            background-color:#222;
+            color: #eee;
+
+        }
+        .menu li{
+            list-style-type: none;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-img{
+            min-height: 100vh;
+            background-image: url("https://picsum.photos/1280/720");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        .hero-img div{
+            min-height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color:rgba(0,0,0,.75);
+        }
+        .hero-img div h1{
+            font-size: 5vw;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        .flex-conteiner{
+            text-align: center;
+        }
+
+        /* responsive page */
+        .flex-responsive{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .flex-responsive-item{
+            border:1px solid black;
+            flex:1 1 200px;
+
+        }
+        @media screen and (min-width: 1024px) {
+            .header{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .menu ul{
+                display: flex;
+                flex-direction: row;
+            }
+            .menu li{
+                padding: 0 .5rem;
+            }
+            .flex-conteiner{
+                display:flex;
+                align-items: center;
+            }
+            .flex-item{
+                flex:0 0 50%;
+            }
+            .order-1{
+                  order: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="titulares header">
+        <div class="logo">Logo</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Section1</a></li>
+                <li><a href="#">Section2</a></li>
+                <li><a href="#">Section3</a></li>
+                <li><a href="#">Section4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="hero-img">
+            <div>
+                <h1>flex-box is fuck'COOL</h1>
+            </div>
+        </article>
+        <section class="flex-conteiner">
+            <article class="flex-item">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam provident, iusto culpa aut voluptas repudiandae! Corporis alias architecto deserunt recusandae iusto vel. Omnis optio ratione culpa perspiciatis reprehenderit repellendus ea.</p>
+            </article>
+            <article class="flex-item">
+                <img src="https://picsum.photos/400/400" alt="img">
+            </article>
+        </section>
+        <section class="flex-conteiner">
+            <article class="flex-item order-1">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam provident, iusto culpa aut voluptas repudiandae! Corporis alias architecto deserunt recusandae iusto vel. Omnis optio ratione culpa perspiciatis reprehenderit repellendus ea.</p>
+            </article>
+            <article class="flex-item">
+                <img src="https://picsum.photos/id/1/400/400" alt="img">
+            </article>
+        </section>
+        <h1>Responsive sin media query con Flex-box</h1>
+        <section class="flex-responsive">
+            <article class="flex-responsive-item">Item resposivo1</article>
+            <article class="flex-responsive-item">Item resposivo2</article>
+            <article class="flex-responsive-item">Item resposivo3</article>
+            <article class="flex-responsive-item">Item resposivo4</article>
+            <article class="flex-responsive-item">Item resposivo5</article>
+            <article class="flex-responsive-item">Item resposivo6</article>
+            <article class="flex-responsive-item">Item resposivo7</article>
+            <article class="flex-responsive-item">Item resposivo8</article>
+            <article class="flex-responsive-item">Item resposivo9</article>
+            <article class="flex-responsive-item">Item resposivo10</article>
+            <article class="flex-responsive-item">Item resposivo11</article>
+            <article class="flex-responsive-item">Item resposivo12</article>
+            <article class="flex-responsive-item">Item resposivo13</article>
+            <article class="flex-responsive-item">Item resposivo14</article>
+            <article class="flex-responsive-item">Item resposivo15</article>
+            <article class="flex-responsive-item">Item resposivo16</article>
+            <article class="flex-responsive-item">Item resposivo17</article>
+            <article class="flex-responsive-item">Item resposivo18</article>
+            <article class="flex-responsive-item">Item resposivo19</article>
+        </section>
+    </main>
+    <footer class="titulares">
+        <h2> Sticky footer</h2>
+        <!-- podemos criar un sticky footer con flex box asignando al body el display flex con direccion columna y al main le ponemos el flex grow:1; para q tome todo el espacio sobrande sin contenido de la viewport, no podemos esquecer de darle un largura al body, como lo hemos hecho con min-heigth:100vh; -->
+    </footer>
+</body>
+</html>
