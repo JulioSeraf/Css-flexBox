@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Practicos Flexbox</title>
+    <style>
+        *,
+        *::before,
+        *::after{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main{
+
+            flex-grow: 1;
+        }
+        .titulares{
+            padding: 1rem;
+            background-color:#222;
+            color: #eee;
+
+        }
+        .menu li{
+            list-style-type: none;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-img{
+            min-height: 100vh;
+            background-image: url("https://picsum.photos/1280/720");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        .hero-img div{
+            min-height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color:rgba(0,0,0,.75);
+        }
+        .hero-img div h1{
+            font-size: 5vw;
+        }
+        @media screen and (min-width: 1024px) {
+            .header{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .menu ul{
+                display: flex;
+                flex-direction: row;
+            }
+            .menu li{
+                padding: 0 .5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="titulares header">
+        <div class="logo">Logo</div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Section1</a></li>
+                <li><a href="#">Section2</a></li>
+                <li><a href="#">Section3</a></li>
+                <li><a href="#">Section4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="hero-img">
+            <div>
+                <h1>flex-box is fuck'COOL</h1>
+            </div>
+        </article>
+    </main>
+    <footer class="titulares">
+        <h2> Sticky footer</h2>
+        <!-- podemos criar un sticky footer con flex box asignando al body el display flex con direccion columna y al main le ponemos el flex grow:1; para q tome todo el espacio sobrande sin contenido de la viewport, no podemos esquecer de darle un largura al body, como lo hemos hecho con min-heigth:100vh; -->
+    </footer>
+</body>
+</html>
